@@ -23,7 +23,7 @@ automatically as a build dependency) and installs `tmux` as a runtime
 dependency. After installing, run:
 
 ```bash
-tclaude setup
+tclaude setup --<install-flags> # see --help
 ```
 
 To upgrade:
