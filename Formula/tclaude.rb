@@ -17,6 +17,24 @@ class Tclaude < Formula
     system "go", "build", *std_go_args(ldflags: "-s -w -X main.version=v#{version}")
   end
 
+  def caveats
+    <<~EOS
+      tclaude is installed but NOT yet configured. Run the one-time setup to wire
+      it into your coding harness (installs Claude Code hooks, the status bar, and
+      the clickable-notification handler):
+
+        tclaude setup
+
+      Most users also want the agent-coordination extras:
+
+        tclaude setup --install-agent-skills --install-default-agent-permissions
+
+      Run `tclaude setup --help` for every --install-* option (or --install-all),
+      and see the installation guide:
+        https://tofutools.github.io/tclaude/#installation
+    EOS
+  end
+
   test do
     assert_match "tclaude", shell_output("#{bin}/tclaude --help 2>&1")
   end
