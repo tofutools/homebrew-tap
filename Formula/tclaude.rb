@@ -10,7 +10,11 @@ class Tclaude < Formula
   depends_on "tmux"
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w")
+    # -X main.version stamps the version into the binary so `tclaude --version`
+    # reports it (a source-tree build has no module version otherwise). v#{version}
+    # matches the upstream release tag, e.g. v0.0.446. No-op on older tags that
+    # predate the main.version variable.
+    system "go", "build", *std_go_args(ldflags: "-s -w -X main.version=v#{version}")
   end
 
   test do
