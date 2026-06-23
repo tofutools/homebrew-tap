@@ -1,8 +1,8 @@
 class Tclaude < Formula
   desc "Tmux-based multi-agent session manager for Claude Code and Codex CLI"
   homepage "https://github.com/tofutools/tclaude"
-  url "https://github.com/tofutools/tclaude/archive/refs/tags/v0.0.549.tar.gz"
-  sha256 "2b560f3f1f4366811954ff4127d265fbec73813413634e164cccb344262d985f"
+  url "https://github.com/tofutools/tclaude/archive/refs/tags/v0.0.550.tar.gz"
+  sha256 "0d61dc7c4dc42f101b381d0902395a5b3e1455b643c1291d02b67184cc007216"
   license "MIT"
   head "https://github.com/tofutools/tclaude.git", branch: "main"
 
